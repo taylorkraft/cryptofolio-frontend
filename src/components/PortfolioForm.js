@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { createPortfolio } from '../actions/createPortfolio'
 
 class PortfolioForm extends React.Component {
 
@@ -13,8 +15,9 @@ class PortfolioForm extends React.Component {
     })
   }
 
-  handleSubmit = () => {
-    
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.createPortfolio(this.state)
   }
 
   render() {
@@ -32,4 +35,4 @@ class PortfolioForm extends React.Component {
   }
 }
 
-export default PortfolioForm
+export default connect(null, {createPortfolio})(PortfolioForm)
