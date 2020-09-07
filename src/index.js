@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import { Prodvider } from 'react-redux'
+import { Provider } from 'react-redux'
+import portfolioReducer from './reducers/portfolioReducer'
 
 import App from './App'
 
@@ -12,10 +13,12 @@ import App from './App'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose
 
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+// anytime something is dispatched, we want that actionObj to be sent to our portfolio reducer - which will then update my store 
+
+let myStore = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={myStore}>
     <App />
   </Provider>,
   document.getElementById('root')
