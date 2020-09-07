@@ -20,6 +20,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 // our reducer will then update our store 
 const store = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thunk)))
 
+// any component that we put in provider, and any of it's child components can access our store 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
@@ -28,6 +29,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-// any component that we put in provider, and any of it's child components can access our store 
-// App and it's children components
