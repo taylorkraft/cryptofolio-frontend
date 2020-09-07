@@ -15,7 +15,8 @@ import App from './App'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-// anytime something is dispatched, we want that actionObj to be sent to our portfolio reducer - which will then update our store 
+// anytime something is dispatched, we want that actionObj to be sent to our portfolio reducer
+// our reducer will then update our store 
 const store = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
@@ -26,4 +27,4 @@ ReactDOM.render(
 );
 
 // any component that we put in provider, and any of it's child components can access our store 
-// (App and it's children components)
+// App and it's children components

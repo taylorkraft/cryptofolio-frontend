@@ -1,5 +1,5 @@
-// This is a thunk function, dispatch is built into thunk
-// We want to dipatch the response from our function to update our redux store
+// this is a thunk function, dispatch is built into thunk
+// we want to dipatch the response from our function to update our redux store
 
 export function fetchPortfolios() {
   return (dispatch) => {
