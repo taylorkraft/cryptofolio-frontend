@@ -1,10 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { fetchPortfolios } from '../actions/fetchPortfolios'
 
 import PortfolioForm from '../components/PortfolioForm'
 import PortfolioList from '../components/PortfolioList'
 
 class PortfoliosContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchPortfolios()
+  }
 
   render() {
     return (
@@ -23,4 +28,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(PortfoliosContainer)
+export default connect(mapStateToProps, {fetchPortfolios})(PortfoliosContainer)
