@@ -1,5 +1,5 @@
 export default function portfolioReducer(state = {portfolios: []}, action ) {
 
-  return state
+  return action.payload
 
 }

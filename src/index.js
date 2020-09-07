@@ -11,14 +11,14 @@ import App from './App'
 
 // We send an action object to our reducer, our reducer is responsible for taking in that object and deciding what we want to update about our current store, the reducer will return a new version of that store
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 // anytime something is dispatched, we want that actionObj to be sent to our portfolio reducer - which will then update my store 
 
-let myStore = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <Provider store={myStore}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
