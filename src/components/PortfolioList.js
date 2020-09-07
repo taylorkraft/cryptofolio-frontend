@@ -4,7 +4,7 @@ const PortfolioList = (props) => {
 
   return (
     <div>
-      PortfolioList
+      {props.portfolios.map(portfolio => <li key={portfolio.id}>{portfolio.name} - {portfolio.balance}</li> )}
     </div>
   )
 }
