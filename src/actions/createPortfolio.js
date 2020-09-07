@@ -9,5 +9,7 @@ export const createPortfolio = (data) => {
       method: 'POST',
       body: JSON.stringify(data)
     })
+    .then(resp => resp.json())
+    .then(portfolio => dispatch({type: 'CREATE_PORTFOLIO', payload: portfolio}))
   }
 }
