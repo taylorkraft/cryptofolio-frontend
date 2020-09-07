@@ -15,7 +15,7 @@ class PortfoliosContainer extends React.Component {
     return (
       <div>
         <PortfolioForm/>
-        <PortfolioList/>
+        <PortfolioList portfolios={this.props.portfolios}/>
       </div>
     )
   }
