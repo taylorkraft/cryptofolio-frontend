@@ -1,16 +1,26 @@
 import React from 'react'
-import PortfolioList from '../components/PortfolioList'
+import { connect } from 'react-redux'
+
 import PortfolioForm from '../components/PortfolioForm'
+import PortfolioList from '../components/PortfolioList'
+
 class PortfoliosContainer extends React.Component {
 
   render() {
     return (
       <div>
-        <PortfolioList/>
         <PortfolioForm/>
+        <PortfolioList/>
       </div>
     )
   }
 }
 
-export default PortfoliosContainer
+// this state is from our redux store
+const mapStateToProps = state => {
+  return {
+    portfolios: state.portfolios
+  }
+}
+
+export default connect(mapStateToProps)(PortfoliosContainer)
