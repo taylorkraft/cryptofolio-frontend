@@ -21,6 +21,7 @@ class PortfoliosContainer extends React.Component {
   }
 }
 
+// maptStateToProps allows us to access the portfolios in our redux store
 // this state is from our redux store
 const mapStateToProps = state => {
   return {

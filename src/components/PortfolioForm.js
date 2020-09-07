@@ -15,9 +15,16 @@ class PortfolioForm extends React.Component {
     })
   }
 
+
+  //this is a controlled form, so the values that we see are coming from the state
+  //to clear the input fields we must setState back to it's initial state of empty strings
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.createPortfolio(this.state)
+    this.setState({
+      name:'',
+      balance: ''
+    })
   }
 
   render() {
