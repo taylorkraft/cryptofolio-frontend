@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPortfolios } from '../actions/fetchPortfolios'
+import { Route } from 'react-router-dom'
 
+import { fetchPortfolios } from '../actions/fetchPortfolios'
 import PortfolioForm from '../components/PortfolioForm'
+import Portfolio from '../components/Portfolio'
 import PortfolioList from '../components/PortfolioList'
 
 class PortfoliosContainer extends React.Component {
@@ -14,8 +16,9 @@ class PortfoliosContainer extends React.Component {
   render() {
     return (
       <div>
-        <PortfolioForm/>
-        <PortfolioList portfolios={this.props.portfolios}/>
+        <Route path='/portfolios/new' component={PortfolioForm}/>
+        <Route path='/portfolios/:id' render={(routerProps) => <Portfolio {...routerProps} portfolios={this.props.portfolios}/>} />
+        <Route exact path='/portfolios' render={(routerProps) => <PortfolioList {...routerProps} portfolios={this.props.portfolios}/>}/>
       </div>
     )
   }
