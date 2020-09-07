@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Link } from 'react-router-dom'
 import Portfolio from './Portfolio'
 
 const PortfolioList = (props) => {
@@ -10,7 +11,9 @@ const PortfolioList = (props) => {
   return (
     <div>
       {props.portfolios.map(portfolio => 
-      <div key={portfolio.id}><Portfolio portfolio={portfolio}/></div>)}
+      <div key={portfolio.id}>
+        <Link to={`/portfolios/${portfolio.id}`}>{portfolio.name}</Link>
+      </div> )}
     </div>
   )
 }
