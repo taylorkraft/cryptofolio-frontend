@@ -5,7 +5,7 @@ import { fetchPortfolios } from './actions/fetchPortfolios'
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.fetchPortfolios({type: 'FETCH_PORTFOLIOS', payload: {name: 'Bitcoin Portfolio'}})
+    
   }
 
   render() {
@@ -17,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, {fetchPortfolios})(App);
+export default connect()(App);
