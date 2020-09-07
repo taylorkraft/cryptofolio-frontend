@@ -10,7 +10,7 @@ const PortfolioList = (props) => {
   return (
     <div>
       {props.portfolios.map(portfolio => 
-      <li key={portfolio.id}><Portfolio portofolio={portfolio}/></li>)}
+      <div key={portfolio.id}><Portfolio portfolio={portfolio}/></div>)}
     </div>
   )
 }

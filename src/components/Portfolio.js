@@ -1,12 +1,11 @@
 import React from 'react'
 
 const Portfolio = (props) => {
-  
-
+  console.log(props)
   return (
-    <div>
-
-    </div>
+    <li>
+      {props.portfolio.name} - {props.portfolio.balance}
+    </li>
   )
 }
 
