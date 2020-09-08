@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import './App.css'
 import PortfoliosContainer from './containers/PortfoliosContainer'
 
 class App extends React.Component {
