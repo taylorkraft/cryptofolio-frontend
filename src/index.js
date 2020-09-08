@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import portfolioReducer from './reducers/portfolioReducer'
+import PortfoliosContainer from './containers/PortfoliosContainer'
 
 import App from './App'
 
@@ -25,6 +26,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <App />
+      <PortfoliosContainer />
     </Router>
   </Provider>,
   document.getElementById('root')
