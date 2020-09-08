@@ -14,7 +14,7 @@ const Portfolio = (props) => {
       <h2>
         {portfolio ? portfolio.name : null} - {portfolio ? portfolio.balance : null}
       </h2>
-      <TradesContainer/>
+      <TradesContainer portfolio={portfolio}/>
     </div>
   )
 }
