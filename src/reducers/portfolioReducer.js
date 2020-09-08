@@ -6,6 +6,15 @@ export default function portfolioReducer(state = {portfolios: []}, action) {
 
       //grab previous state, grab all previous portfolios in state and our new portfolio
       return {...state, portfolios: [...state.portfolios, action.payload]}
+    case 'CREATE_TRADE':
+      let portfolios = state.portfolios.map(portfolio => {
+        if (portfolio.id === action.payload.id) {
+          return action.payload
+        } else {
+          return portfolio
+        }
+      })
+      return {...state, portfolios: portfolios}
     default:
       return state
   }

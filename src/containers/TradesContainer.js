@@ -8,7 +8,7 @@ class TradesContainer extends React.Component {
   render() {
     return (
       <div>
-        <TradeForm/>
+        <TradeForm portfolio={this.props.portfolio}/>
         <TradeList trades={this.props.portfolio && this.props.portfolio.trades}/>
       </div>
     )

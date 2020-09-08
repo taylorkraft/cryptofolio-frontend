@@ -7,7 +7,7 @@ const TradeList = (props) => {
     <div>
       {props.trades && props.trades.map(trade => 
         <li key={trade.id}>
-          {trade.trade_type} - {trade.amount} - {trade.date}
+          {trade.trade_type} - {trade.amount}
         </li>
         )}
     </div>
