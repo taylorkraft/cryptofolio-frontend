@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import portfolioReducer from './reducers/portfolioReducer'
 import PortfoliosContainer from './containers/PortfoliosContainer'
+import Navbar from './components/Navbar'
 
 import App from './App'
 
@@ -25,8 +26,7 @@ const store = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thu
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
-      <PortfoliosContainer />
+      <Navbar />
     </Router>
   </Provider>,
   document.getElementById('root')
