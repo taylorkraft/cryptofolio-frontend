@@ -5,9 +5,9 @@ import TradesContainer from '../containers/TradesContainer'
 
 const Portfolio = (props) => {
 
-  let portfolio = props.portfolios[props.match.params.id -1]
-  console.log(portfolio)
-
+  // let portfolio = props.portfolios[props.match.params.id -1]
+  let portfolio = props.portfolios.filter(portfolio => portfolio.id == props.match.params.id)[0]
+  
   // the first time props comes through we don't have portfolios yet
   return (
     <div>
