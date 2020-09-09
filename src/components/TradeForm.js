@@ -27,6 +27,7 @@ class TradeForm extends React.Component {
   render() {
     return (
       <div>
+        <h4>LOG YOUR TRADES:</h4>
         <form onSubmit={this.handleSubmit}>
           <label>Trade Amount: </label>
           <input type="text" name="amount" value={this.props.amount} onChange={this.handleChange}/>

@@ -30,12 +30,13 @@ class PortfolioForm extends React.Component {
   render() {
     return (
       <div>
+          <h2>CREATE A NEW PORTFOLIO</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Portfolio Name: </label>
           <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/><br/>
           <label>Portfolio Balance: </label>
-          <input type="text" placeholder="Balance" value={this.state.balance} name="balance" onChange={this.handleChange}/><br/>
-          <input type="submit"/><br/><br/>
+          <input type="text" placeholder="Balance" value={this.state.balance} name="balance" onChange={this.handleChange}/>
+          <input type="submit"/>
         </form>
       </div>
     )
