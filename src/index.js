@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import portfolioReducer from './reducers/portfolioReducer'
-import PortfoliosContainer from './containers/PortfoliosContainer'
-import Navbar from './components/Navbar'
 
 import App from './App'
 
@@ -16,17 +14,16 @@ import App from './App'
 // our reducer is responsible for taking in that object and deciding what we want to update about our current store
 // the reducer will return a new version of that store
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
 // anytime something is dispatched, we want that actionObj to be sent to our portfolio reducer
 // our reducer will then update our store 
-const store = createStore(portfolioReducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(portfolioReducer,(applyMiddleware(thunk)))
 
-// any component that we put in provider, and any of it's child components can access our store 
+// any component that we put in provider, and any of it's child components can access our store
+// any component that we wrap in router, and it's children now has access to setting up wraps and links inside of any of those components 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Navbar />
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')

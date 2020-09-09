@@ -15,15 +15,6 @@ export default function portfolioReducer(state = {portfolios: []}, action) {
         }
       })
       return {...state, portfolios: portfolios}
-    case 'DELETE_TRADE':
-      let portfolioAfterDelete = state.portfolios.map(portfolio => {
-        if (portfolio.id === action.payload.id) {
-          return action.payload
-        } else {
-          return portfolio
-        }
-      })
-      return {...state, portfolios: portfolioAfterDelete}
     default:
       return state
   }

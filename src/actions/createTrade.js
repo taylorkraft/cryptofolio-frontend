@@ -9,6 +9,13 @@ export const createTrade = (trade, portfolioId) => {
       body: JSON.stringify(trade)
     })
     .then(resp => resp.json())
-    .then(portfolio => dispatch({type: 'CREATE_TRADE', payload: portfolio}))
+    .then(portfolio => {
+      if (portfolio.error) {
+        alert(portfolio.error)
+      } else {
+        dispatch({type: 'CREATE_TRADE', payload: portfolio})
+        }
+      }
+    )
   }
 }
