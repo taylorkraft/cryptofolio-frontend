@@ -12,12 +12,12 @@ const PortfolioList = (props) => {
   // that Portfolio component must accept a portfolio as props
   return (
     <div>
-      <Link to={'/'} style={link}>CRYPTOFOLIO HOME</Link><br/><br/>
+      <Link to={'/'} style={link}>HOME</Link><br/>
+      <Link to={'/portfolios/new'} style={link}>CREATE A NEW PORTFOLIO</Link><br/><br/>
       {props.portfolios.map(portfolio => 
       <div key={portfolio.id}>
         <Link to={`/portfolios/${portfolio.id}`} style={componentLink}>{portfolio.name}</Link>
-      </div> )}<br/>
-        <Link to={'/portfolios/new'} style={link}>Create a new portfolio</Link>
+      </div> )}
     </div>
   )
 }

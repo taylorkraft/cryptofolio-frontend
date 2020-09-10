@@ -14,10 +14,11 @@ const Portfolio = (props) => {
   // the first time props comes through we don't have portfolios yet
   return (
     <div>
-      <Link to={'/'} style={link}>CRYPTOFOLIO HOME</Link>
-      <h2>
+      <Link to={'/'} style={link}>HOME</Link><br/>
+      <Link to ={'/portfolios'} style={link}>BACK TO PORTFOLIOS</Link><br/><br/>
+      <h3>
         {portfolio ? portfolio.name : null} - {portfolio ? portfolio.balance : null}
-      </h2>
+      </h3>
       <TradesContainer portfolio={portfolio}/>
     </div>
   )

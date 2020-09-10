@@ -9,7 +9,7 @@ const Home = () => {
         <h1>
           CRYPTOFOLIO<br/>
         </h1>
-        <Link to={'/portfolios'} style={link}>My Portfolios</Link>
+        <Link to={'/portfolios'} style={link}>MY PORTFOLIOS</Link>
       </div>
   )
 }
