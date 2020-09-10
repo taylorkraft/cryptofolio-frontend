@@ -1,68 +1,55 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## CRYPTOFOLIO
 
-In the project directory, you can run:
+An app designed to organize your cryptocurrency portfolio balance
 
-### `yarn start`
+### Launching App
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In your terminal:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+git clone git@github.com:taylorkraft/cryptofolio-backend.git
 
-### `yarn test`
+- this will download the Ruby on Rails repo that serves the backend of this application
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+cd into cryptofolio-backend
 
-### `yarn build`
+Run:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+rails db:migrate
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+rails db:seed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+rails s
 
-### `yarn eject`
+- this will migrate the database, seed the application with some data, and run the rails server
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In a seperate terminal:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+git clone git@github.com:taylorkraft/cryptofolio-frontend.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- this will download the React.js frontend that is this repo
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+cd into cryptofolio-frontend
 
-## Learn More
+Run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start
 
-### Code Splitting
+(or yarn install, yarn start)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- this will install node package manager, and start the frontend server
 
-### Analyzing the Bundle Size
+### Navigation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+From the homepage:
 
-### Making a Progressive Web App
+- follow the link to "My Portfolios"
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+From here:
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- we can navigate back to the home page
+- create a new portfolio
+- view our existing portfolios and create trades
