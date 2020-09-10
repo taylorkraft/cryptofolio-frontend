@@ -28,6 +28,9 @@ class PortfolioForm extends React.Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect push to='/portfolios' />
+    }
     return (
       <div>
           <h2>CREATE A NEW PORTFOLIO</h2>
