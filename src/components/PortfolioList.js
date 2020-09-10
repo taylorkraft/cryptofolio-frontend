@@ -13,7 +13,8 @@ const PortfolioList = (props) => {
       {props.portfolios.map(portfolio => 
       <div key={portfolio.id}>
         <Link to={`/portfolios/${portfolio.id}`}>{portfolio.name}</Link>
-      </div> )}
+      </div> )}<br/>
+      <Link to={'/portfolios/new'}>Create a new portfolio</Link>
     </div>
   )
 }
