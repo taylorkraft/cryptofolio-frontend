@@ -6,6 +6,7 @@ import { fetchPortfolios } from '../actions/fetchPortfolios'
 import PortfolioForm from '../components/PortfolioForm'
 import Portfolio from '../components/Portfolio'
 import PortfolioList from '../components/PortfolioList'
+import Home from '../components/Home'
 
 class PortfoliosContainer extends React.Component {
 
@@ -20,6 +21,7 @@ class PortfoliosContainer extends React.Component {
           <Route path='/portfolios/new' component={PortfolioForm}/>
           <Route path='/portfolios/:id' render={(routerProps) => <Portfolio {...routerProps} portfolios={this.props.portfolios}/>} />
           <Route path='/portfolios' render={(routerProps) => <PortfolioList {...routerProps} portfolios={this.props.portfolios}/>}/>
+          <Route path='/' component={Home}/>
         </Switch>
       </div>
     )
