@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createPortfolio } from '../actions/createPortfolio'
+import { Redirect } from 'react-router'
 
 class PortfolioForm extends React.Component {
 
@@ -21,10 +22,7 @@ class PortfolioForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.createPortfolio(this.state)
-    this.setState({
-      name:'',
-      balance: ''
-    })
+    this.setState({redirect: true})
   }
 
   render() {

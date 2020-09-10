@@ -1,5 +1,8 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import link from './HomeLink'
+
 
 import TradesContainer from '../containers/TradesContainer'
 
@@ -11,6 +14,7 @@ const Portfolio = (props) => {
   // the first time props comes through we don't have portfolios yet
   return (
     <div>
+      <Link to={'/'} style={link}>CRYPTOFOLIO HOME</Link>
       <h2>
         {portfolio ? portfolio.name : null} - {portfolio ? portfolio.balance : null}
       </h2>
