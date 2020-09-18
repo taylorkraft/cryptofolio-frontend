@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 
-import { fetchPortfolios } from '../actions/fetchPortfolios'
+import fetchPortfolios from '../actions/fetchPortfolios'
 import PortfolioForm from '../components/PortfolioForm'
 import Portfolio from '../components/Portfolio'
 import PortfolioList from '../components/PortfolioList'

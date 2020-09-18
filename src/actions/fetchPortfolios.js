@@ -1,7 +1,8 @@
-// this is a thunk function, dispatch is built into thunk
+// this is a thunk function
+// dispatch is built into thunk
 // we want to dipatch the response from our function to update our redux store
 
-export function fetchPortfolios() {
+function fetchPortfolios() {
   return (dispatch) => {
   fetch('http://localhost:3000/api/v1/portfolios')
     .then(resp => resp.json())
@@ -11,3 +12,4 @@ export function fetchPortfolios() {
     }))
   }
 }
+export default fetchPortfolios
