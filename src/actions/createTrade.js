@@ -1,4 +1,4 @@
-export const createTrade = (trade, portfolioId) => {
+const createTrade = (trade, portfolioId) => {
 
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/portfolios/${portfolioId}/trades`, {
@@ -13,9 +13,14 @@ export const createTrade = (trade, portfolioId) => {
       if (portfolio.error) {
         alert(portfolio.error)
       } else {
-        dispatch({type: 'CREATE_TRADE', payload: portfolio})
+        dispatch({
+            type: 'CREATE_TRADE', payload: portfolio
+            }
+          )
         }
       }
     )
   }
 }
+
+export default createTrade

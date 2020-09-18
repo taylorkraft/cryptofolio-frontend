@@ -9,9 +9,8 @@ function portfolioReducer(state = {portfolios: []}, action) {
       return {portfolios: action.payload}
 
     case 'CREATE_PORTFOLIO':
-      //grab previous state, grab all previous portfolios in state and our new portfolio
       return {...state, portfolios: [...state.portfolios, action.payload]}
-      
+
     case 'CREATE_TRADE':
       let portfolios = state.portfolios.map(portfolio => {
         if (portfolio.id === action.payload.id) {
@@ -21,6 +20,7 @@ function portfolioReducer(state = {portfolios: []}, action) {
         }
       })
       return {...state, portfolios: portfolios}
+
     default:
       return state
   }

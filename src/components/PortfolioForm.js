@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import createPortfolio from '../actions/createPortfolio'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
-import link from './HomeLink'
+import link from './Link'
 
 class PortfolioForm extends React.Component {
 
@@ -31,11 +31,15 @@ class PortfolioForm extends React.Component {
     if (this.state.redirect) {
       return <Redirect push to='/portfolios' />
     }
+    
     return (
       <div>
+
         <Link to={'/'} style={link}>HOME</Link><br/>
         <Link to ={'/portfolios'} style={link}>BACK TO PORTFOLIOS</Link><br/><br/>
+
           <h3>CREATE A NEW PORTFOLIO</h3>
+
         <form onSubmit={this.handleSubmit}>
           <label>Portfolio Name: </label>
           <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/><br/>
@@ -43,6 +47,7 @@ class PortfolioForm extends React.Component {
           <input type="text" placeholder="Balance" value={this.state.balance} name="balance" onChange={this.handleChange}/>
           <input type="submit"/>
         </form>
+
       </div>
     )
   }

@@ -1,7 +1,7 @@
 const link = {
   width: '100px',
     textDecoration: 'none',
-    color: 'white'
+    color: 'chartreuse'
 }
 
 export default link

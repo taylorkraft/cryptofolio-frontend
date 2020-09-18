@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Portfolio from './Portfolio'
-import link from './HomeLink'
-import componentLink from '../components/ComponentLink'
+import link from './Link'
+
 
 const PortfolioList = (props) => {
 
@@ -12,12 +11,19 @@ const PortfolioList = (props) => {
   // that Portfolio component must accept a portfolio as props
   return (
     <div>
-      <Link to={'/'} style={link}>HOME</Link><br/>
-      <Link to={'/portfolios/new'} style={link}>CREATE A NEW PORTFOLIO</Link><br/><br/>
+
+      <Link to={'/'} style={link}>HOME</Link>
+        <br/>
+      <Link to={'/portfolios/new'} style={link}>CREATE A NEW PORTFOLIO</Link>
+        <br/>
+        <br/>
+
       {props.portfolios.map(portfolio => 
+
       <div key={portfolio.id}>
-        <Link to={`/portfolios/${portfolio.id}`} style={componentLink}>{portfolio.name}</Link>
-      </div> )}
+        <Link to={`/portfolios/${portfolio.id}`} style={link}>{portfolio.name}</Link>
+      </div>)}
+
     </div>
   )
 }

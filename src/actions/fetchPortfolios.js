@@ -6,10 +6,14 @@ function fetchPortfolios() {
   return (dispatch) => {
   fetch('http://localhost:3000/api/v1/portfolios')
     .then(resp => resp.json())
-    .then(portfolios => dispatch({
-      type: 'FETCH_PORTFOLIOS',
-      payload: portfolios
-    }))
+    .then(portfolios => 
+      dispatch({
+        type: 'FETCH_PORTFOLIOS',
+        payload: portfolios
+        }
+      )
+    )
   }
 }
+
 export default fetchPortfolios

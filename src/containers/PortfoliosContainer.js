@@ -19,8 +19,13 @@ class PortfoliosContainer extends React.Component {
       <div>
         <Switch>
           <Route path='/portfolios/new' component={PortfolioForm}/>
-          <Route path='/portfolios/:id' render={(routerProps) => <Portfolio {...routerProps} portfolios={this.props.portfolios}/>} />
-          <Route path='/portfolios' render={(routerProps) => <PortfolioList {...routerProps} portfolios={this.props.portfolios}/>}/>
+
+          <Route path='/portfolios/:id' render={(routerProps) => 
+          <Portfolio {...routerProps} portfolios={this.props.portfolios}/>} />
+
+          <Route path='/portfolios' render={(routerProps) => 
+          <PortfolioList {...routerProps} portfolios={this.props.portfolios}/>}/>
+          
           <Route path='/' component={Home}/>
         </Switch>
       </div>

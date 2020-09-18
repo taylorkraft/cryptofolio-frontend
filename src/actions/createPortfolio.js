@@ -12,7 +12,9 @@ const createPortfolio = (input) => {
     .then(portfolio => 
       dispatch({
         type: 'CREATE_PORTFOLIO', payload: portfolio
-      }))
+        }
+      )
+    )
   }
 }
 
