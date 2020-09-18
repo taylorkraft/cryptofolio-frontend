@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createPortfolio } from '../actions/createPortfolio'
+import createPortfolio from '../actions/createPortfolio'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import link from './HomeLink'

@@ -1,5 +1,4 @@
-export const createPortfolio = (data) => {
-  //dispatches to reducer
+const createPortfolio = (input) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/portfolios', {
       headers: {
@@ -7,9 +6,14 @@ export const createPortfolio = (data) => {
         'Accept': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify(data)
+      body: JSON.stringify(input)
     })
     .then(resp => resp.json())
-    .then(portfolio => dispatch({type: 'CREATE_PORTFOLIO', payload: portfolio}))
+    .then(portfolio => 
+      dispatch({
+        type: 'CREATE_PORTFOLIO', payload: portfolio
+      }))
   }
 }
+
+export default createPortfolio
