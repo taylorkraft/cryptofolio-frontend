@@ -11,7 +11,7 @@ import Home from '../components/Home'
 class PortfoliosContainer extends React.Component {
 
   componentDidMount() {
-    this.props.fetchPortfolios()
+    this.props.fetchPortfolios() 
   }
 
   render() {
@@ -19,14 +19,16 @@ class PortfoliosContainer extends React.Component {
       <div>
         <Switch>
           <Route path='/portfolios/new' component={PortfolioForm}/>
+          <Route path='/portfolios/:id' component={Portfolio} />
 
-          <Route path='/portfolios/:id' render={(routerProps) => 
-          <Portfolio {...routerProps} portfolios={this.props.portfolios}/>} />
+          {/* <Route path='/portfolios/:id' render={(routeProps) => 
+          <Portfolio {...routeProps} portfolios={this.props.portfolios}/>} /> */}
 
-          <Route path='/portfolios' render={(routerProps) => 
-          <PortfolioList {...routerProps} portfolios={this.props.portfolios}/>}/>
+          {/* <Route path='/portfolios' render={(routeProps) => 
+          <PortfolioList {...routeProps} portfolios={this.props.portfolios}/>}/> */}
+          <Route path='/portfolios' component={PortfolioList}/>
           
-          <Route path='/' component={Home}/>
+          <Route exact path='/' component={Home}/>
         </Switch>
       </div>
     )
@@ -35,10 +37,10 @@ class PortfoliosContainer extends React.Component {
 
 // maptStateToProps allows us to access the portfolios in our redux store
 // this state is from our redux store
-const mapStateToProps = state => {
-  return {
-    portfolios: state.portfolios
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     portfolios: state.portfolios
+//   }
+// }
 
-export default connect(mapStateToProps, {fetchPortfolios})(PortfoliosContainer)
+export default connect(null, {fetchPortfolios})(PortfoliosContainer)

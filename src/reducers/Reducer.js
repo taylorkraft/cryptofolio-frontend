@@ -8,6 +8,8 @@ function Reducer(state = {portfolios: []}, action) {
     case 'FETCH_PORTFOLIOS':
       return {portfolios: action.payload}
 
+      // we don't mutate state
+      // must supply an empty object as the first parameter
     case 'CREATE_PORTFOLIO':
       return {...state, portfolios: [...state.portfolios, action.payload]}
 
@@ -21,6 +23,7 @@ function Reducer(state = {portfolios: []}, action) {
       })
       return {...state, portfolios: portfolios}
 
+      // return previous state for any unknown action
     default:
       return state
   }

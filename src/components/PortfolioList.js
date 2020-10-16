@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import link from './Link'
+import { connect } from 'react-redux'
 
 
 const PortfolioList = (props) => {
@@ -9,6 +10,7 @@ const PortfolioList = (props) => {
   // which is coming in through our store from mapStateToProps
   // for each portfolio we create a Portfolio component
   // that Portfolio component must accept a portfolio as props
+  console.log(props)
   return (
     <div>
 
@@ -28,4 +30,12 @@ const PortfolioList = (props) => {
   )
 }
 
-export default PortfolioList
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    portfolios: state.portfolios
+  }
+}
+
+
+export default connect(mapStateToProps) (PortfolioList)
